@@ -1,15 +1,42 @@
 import { useEffect, useState } from 'react';
 import { CardsList } from 'components/CardsList';
-import { getListOfCharacters } from 'services/api';
+import { LoadMoreBtn } from 'components/LoadMoreBtn';
+import { getListOfCharacters, loadMoreCharactersFn } from 'services/api';
 
 export const Main = () => {
   const [characters, setCharacters] = useState([]);
+  const [filter, setFilter] = useState('');
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
     getListOfCharacters().then(setCharacters);
   }, []);
 
+  useEffect(() => {
+    loadMoreCharactersFn(page).then(response => {
+      setCharacters([...characters, ...response]);
+    });
+  }, [page]);
+
+  const getfiltredCards = () => {
+    const normilizedFilter = filter.toLowerCase();
+    return characters.filter(character =>
+      character.name.toLowerCase().includes(normilizedFilter)
+    );
+  };
+
+  const changeFilter = event => {
+    setFilter(event.currentTarget.value);
+  };
+
+  const loadMoreCharacters = () => {
+    setPage(page + 1);
+  };
+
+  console.log(page);
+
   return (
-    <div>
+    <div className="main_page_wrapper">
       <img
         src="./images/poster_desktop_1x.png"
         className="poster_img"
@@ -32,11 +59,13 @@ export const Main = () => {
           className="main_input"
           placeholder="Filter by name..."
           type="text"
+          onChange={changeFilter}
           name="main_inpet_filter"
         ></input>
       </form>
 
-      <CardsList characters={characters} />
+      <CardsList characters={getfiltredCards()} />
+      <LoadMoreBtn loadMore={loadMoreCharacters} />
     </div>
   );
 };

@@ -5,6 +5,7 @@ export const CardsList = ({ characters }) => {
   const location = useLocation();
   // sort array of characters by name
   characters.sort((first, second) => first.name.localeCompare(second.name));
+  console.log(characters);
 
   return (
     <div className="main_cardsList_wrapper">

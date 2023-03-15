@@ -8,6 +8,12 @@ export const getListOfCharacters = async () => {
   return data.results;
 };
 
+// ф-я довантаження персонажів
+export const loadMoreCharactersFn = async page => {
+  const { data } = await axios.get(`character/?page=${page}`);
+  return data.results;
+};
+
 // ф-я отримання інфи за конкретним персонажем
 export const getOneCharacterById = async id => {
   const response = await axios.get(`character/${id}`);

@@ -24,7 +24,7 @@ export const CardDetails = () => {
 
   return (
     <div>
-      <img
+      {/* <img
         src={character.image}
         className="details_poster_img"
         alt="view character"
@@ -52,7 +52,7 @@ export const CardDetails = () => {
         <li className="details_character_descroptions-item">
           <span>Type:{character.type}</span>
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 };
