@@ -1,10 +1,10 @@
 import { getOneCharacterById } from 'services/api';
 import {
   useParams,
-  Outlet,
-  Link,
-  useLocation,
-  useNavigate,
+  //   Outlet,
+  //   Link,
+  //   useLocation,
+  //   useNavigate,
 } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -12,7 +12,7 @@ export const CardDetails = () => {
   const { id } = useParams();
 
   const [character, setCharacter] = useState(null);
-  const [error, setError] = useState(null);
+  //   const [error, setError] = useState(null);
 
   useEffect(() => {
     getOneCharacterById(Number(id)).then(setCharacter);
