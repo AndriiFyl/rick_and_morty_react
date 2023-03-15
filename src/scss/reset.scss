@@ -1,0 +1,35 @@
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    padding: 0;
+}

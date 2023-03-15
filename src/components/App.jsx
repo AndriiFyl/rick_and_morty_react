@@ -1,16 +1,15 @@
+import { Main } from 'pages/Main';
+import { CardDetails } from 'pages/CardDetails';
+
+import { Route, Routes } from 'react-router-dom';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div className="section_wrapper">
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/character_card/:id" element={<CardDetails />} />
+      </Routes>
     </div>
   );
 };

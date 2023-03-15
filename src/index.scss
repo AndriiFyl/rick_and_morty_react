@@ -1,0 +1,35 @@
+@import './scss/components.scss/App.scss';
+@import './scss/components.scss/CardsList.scss';
+@import './scss/pages.scss/Main.scss';
+@import './scss/reset.scss';
+
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, 'Roboto', BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #E5E5E5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+.section_wrapper {
+  max-width: 1440px;
+  min-height: 100vh;
+  background-color: #ffff;
+  margin-left: auto;
+  margin-right: auto;
+}
