@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 export const CardsList = ({ characters }) => {
   const location = useLocation();
-  // sort array of characters by name
+
   characters.sort((first, second) => first.name.localeCompare(second.name));
 
   return (
